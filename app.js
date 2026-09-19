@@ -354,7 +354,7 @@ function meLines() {
 function meNode(item) {
   if (state.deletedDreams.has(item.id)) return "";
   const isRead = state.readNodes.has(item.id);
-  return `<button type="button" class="map-node ${item.type}" style="--x:${item.x};--y:${item.y}" data-me-node="${item.target || item.id}" aria-label="打开${item.type === "friend" ? "梦友" : "梦境"}：${item.title}">
+  return `<button type="button" class="map-node ${item.type}" style="--x:${item.x};--y:${item.y}" data-node-id="${item.id}" data-me-node="${item.target || item.id}" aria-label="打开${item.type === "friend" ? "梦友" : "梦境"}：${item.title}">
     ${item.news && !isRead ? '<i class="news-badge"></i>' : ""}
     <span class="node-label"><strong>${item.title}</strong>${item.meta}</span>
   </button>`;
